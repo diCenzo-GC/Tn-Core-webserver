@@ -37,7 +37,7 @@ This should be a tab-delineated text file containing the TnSeq data. The 1st col
 ### RNAseq Data
 This should be a tab-delineated text file containing the RNAseq data. The 1st column should be the gene names (ensure the gene names are the same as the gene names in the metabolic reconstruction, and the 2nd column should be the RNAseq data as either RPKM or TPM.
 
-### Growth Fraction
+### Minimum Growth Fraction
 This should be a value greater than 0 and lesser than or equal to 1 (i.e., 0 < n ≤ 1). This number sets the minimal rate that the output model can produce biomass relative to the input genome-scale metabolic model. For example, if the input model produces 0.3 g of biomass per hour per gram of biomass, and this value is set to 0.5, then the output model must produce at least 0.15 g of biomass per hour per gram of biomass. If no value is entered, the default is 0.5.
 
 ### Expression Threshold
