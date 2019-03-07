@@ -47,7 +47,13 @@ This should be the minimum RPKM or TPM value for a gene to be considered 'highly
 ## Outputs
 
 ### Excel File
-The Excel file contains three sheets summarizing the core metabolic reconstruction. The first sheet include information on the reactions. The following columns are included: XXX. The second sheet includes information on the metabolites present in the core metabolic reconstruction. The following columns are included: XXX. The third sheed includes information on the genes present in the core metabolic reconstruction. The following columns are included: XXX.
+The Excel file contains three sheets summarizing the core metabolic reconstruction.
+
+The first sheet include information on the reactions. The following columns are included: RxnID - the reaction identifier; RxnName - name of the reaction (i.e. brief description of the activity); Reaction_A - the reaction formula using the metabolite identifiers; Reaction_B - the reaction formula using actual metabolite names; Reversible - indicates if the reaction is reversible (true) or not reversible (false); KEGG_RID - the KEGG reaction ID of the reaction (only included if provided in the input model); EnzymeClass - the enzyme classification number (only included if provided in the input model); Genes - the genes associated with the reaction; Proteins - the proteins encoded by the genes associated with the reaction (only included if provided in the input model).
+
+The second sheet includes information on the genes present in the core metabolic reconstruction. The following columns are included: Gene - the gene name; Protein - the name of the protein encoded by the gene (only included if provided in the input model); Tn_Seq_Data - the TnSeq data for the gene from the input TnSeq file; RNAseq_Data - the RNAseq data for the gene from the input RNAseq file (only included if RNAseq data are provided).
+
+The third sheed includes information on the metabolites present in the core metabolic reconstruction. The following columns are included: MetIDs - the metabolite identifiers; MetNames - the names of the metabolties.
 
 ### MATLAB File
 The MATLAB file contains the core metabolic reconstruction as a COBRA-formatted model.
