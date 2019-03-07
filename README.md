@@ -2,7 +2,7 @@
 
 Transposon-sequencing (TnSeq) and genome-scale constraint-based metabolic modelling are highly complementary experimental and in silico approaches. Workflows combining these two approaches have the potential to provide insights not obtainable by either method alone. The Tn-Core Toolbox was designed to provide tools for integrating these methods, facilitating the contextualization of TnSeq data and the formation of context-specific core metabolic reconstructions. The output models provide a framework to assist in the functional interpretation of TnSeq data and in identifying gaps in the data, in addition to being useful in downstream modelling pipelines.
 
-The Tn-Core webserver is a web-based implementation of one of the main functionalities of Tn-Core: extraction of a context-specific core metabolic network on the basis of TnSeq data. The webserver returns the core metabolic network in two formats: i) as an easy-to-understand Excel file, and ii) as a COBRA-formatted model as a MATLAB file. The webserver was developed to (hopefully) be accessible even to those with little to no experience in metabolic modelling. Below, you will find a description of the input requirements and the outputs. Additionally, this repository contains five files aside from the README file; these files are sample data for use with the Tn-Core webserver.
+The Tn-Core webserver is a web-based implementation of one of the main functionalities of Tn-Core: extraction of a context-specific core metabolic network on the basis of TnSeq data. The webserver returns the core metabolic network in two formats: i) as an easy-to-understand Excel file, and ii) as a COBRA-formatted model as a MATLAB file. The webserver was developed to (hopefully) be accessible even to those with little to no experience in metabolic modelling. Below, you will find a description of the input requirements and the outputs. Additionally, this repository contains a folder with five files for use as sample data to test the Tn-Core webserver.
 
 
 ## Contacts
@@ -51,17 +51,6 @@ The Excel file contains three sheets summarizing the core metabolic reconstructi
 
 ### MATLAB File
 The MATLAB file contains the core metabolic reconstruction as a COBRA-formatted model.
-
-
-## Sample Data
-
-Five files are provided for testing the Tn-Core webserver.
-input_model.xml - A sample file to enter in the 'Metabolic Reconstruction' field.
-Exchange_reactions.txt - A sample file to enter in the 'Exchange Reactions' field.
-Objective_reaction.txt - A sample file to enter in the 'Exchange Reactions' field.
-TnSeqData.txt - A sample file to enter in the 'TnSeq Data' field.
-RNAseqData.txt - A sample file to enter in the 'RNAseq Data' field.
-
 
 ## Citation
 
