@@ -65,6 +65,14 @@ RNAseqData.txt - A sample file to enter in the 'RNAseq Data' field.
 
 ## Citation
 
-If you find the output of the Tn-Core webserver to be helpful, we ask you to consider including a statement such as the following in the Methods section of your manuscript:
+If you find the output of the Tn-Core webserver to be helpful, we ask you to consider including a statement such as the following in the methods section of your manuscript:
 
-Transposon-sequencing data was integrated with the metabolic reconstruction using the Tn-Core webserver (ref), which is dependent on MATLAB 2016b (mathworks.com), the iLOG CPLEX solver v.XXX (ibm.com), the COBRA Toolbox (ref), the TIGER Toolbox v.XXX (ref), the Tn-Core Toolbox v.XXX (ref), FASTCORE v.XXX (ref), GIMME (ref), libSBML (ref), and XXX.
+Transposon-sequeing data was integrated with the metabolic reconstruction using the Tn-Core webserver (1), which is dependent the Tn-Core Toolbox 2.1 (1), the COBRA Toolbox (2), the TIGER Toolbox 1.2.0-beta (3), FASTCORE 1.0 (4), GIMME (5), the SBMLToolbox 4.1.0 (6), libSBML 5.13.0 (7), MATLAB 2016b (mathworks.com), and the iLOG CPLEX Studio 12.7.1 solver (ibm.com).
+
+(1) diCenzo GC, et al. (2019) Tn-Core: a toolbox for integrating Tn-seq gene essentiality data and constraint-based metabolic modelling. ACS Synth Biol. 8: 158-169.
+(2) Schellenberger J, et al. (2011) Quantitative prediction of cellular metabolism with constraint-based models: the COBRA Toolbox v2.0. Nat Protoc. 6: 1290-1307.
+(3) Jensen PA, et al. (2011) TIGER: Toolbox for integrating genome-scale metabolic models, expression data, and transcriptional regulatory networks. BMC Syst Biol. 5: 147.
+(4) Vlassis N, et al. (2014). Fast reconstruction of compact context-specific metabolic network models. PLOS Comput Biol. 10: e1003424.
+(5) Becker SA, Palsson BO. (2008) Context-specific metabolic networks are consistent with experiments. PLOS Comput Biol. 4: e1000082.
+(6) Keating SM, et al. (2006) SBMLToolbox: an SBML toolbox for MATLAB users. Bioinformatics. 22: 1275-1277.
+(7) Bornstein BJ, et al. (2008) LibSBML: an API library for SBML. Bioinformatics. 24: 880-881.
