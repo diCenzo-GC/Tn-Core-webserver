@@ -29,13 +29,13 @@ Exchange reactions provide a way of setting the growth medium for the simulation
 This should indicate the biomass reaction. Here, you should provide a tab-delineated text file consisting of one line: the reaction identifier of the biomass reaction, followed by the objective coefficient (should always be 1).
 
 ### TnSeq Data
-This should be a tab-delineated text file containing the TnSeq data. The 1st column should be the gene names (ensure the gene names are the same as the gene names in the metabolic reconstruction, and the 2nd column should be a summary statistic of the TnSeq data. The TnSeq data should not be log-transformed, and should be in a format where the lower the number, the more important the gene. For example, it could consist of the number of reads mapping to the gene divided by the gene length.
+This should be a tab-delineated text file containing the TnSeq data. The 1st column should be a summary statistic of the TnSeq data, and the 2nd column be the gene names (ensure the gene names are the same as the gene names in the metabolic reconstruction). The TnSeq data should not be log-transformed, and should be in a format where the lower the number, the more important the gene. For example, it could consist of the number of reads mapping to the gene divided by the gene length. This file can contain data for genes that are not in the reconstruction, and it does not have to contain data for every gene in the model.
 
 
 ## Optional Inputs
 
 ### RNAseq Data
-This should be a tab-delineated text file containing the RNAseq data. The 1st column should be the gene names (ensure the gene names are the same as the gene names in the metabolic reconstruction, and the 2nd column should be the RNAseq data as either RPKM or TPM.
+This should be a tab-delineated text file containing the RNAseq data. The 1st column should be the RNAseq data as either RPKM or TPM, and the 2nd column should be the gene names (ensure the gene names are the same as the gene names in the metabolic reconstruction). This file can contain data for genes that are not in the reconstruction, and it does not have to contain data for every gene in the model.
 
 ### Minimum Growth Fraction
 This should be a value greater than 0 and lesser than or equal to 1 (i.e., 0 < n ≤ 1). This number sets the minimal rate that the output model can produce biomass relative to the input genome-scale metabolic model. For example, if the input model produces 0.3 g of biomass per hour per gram of biomass, and this value is set to 0.5, then the output model must produce at least 0.15 g of biomass per hour per gram of biomass. If no value is entered, the default is 0.5.
