@@ -77,4 +77,3 @@ Transposon-sequeing data was integrated with the metabolic reconstruction using 
 (6) Keating SM, et al. (2006) SBMLToolbox: an SBML toolbox for MATLAB users. Bioinformatics. 22: 1275-1277.
 
 (7) Bornstein BJ, et al. (2008) LibSBML: an API library for SBML. Bioinformatics. 24: 880-881.
-

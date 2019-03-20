@@ -1,0 +1,101 @@
+{% extends "template.html" %}
+{% block title %}Tn-Core Server{% endblock %}
+{% block container %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <strong>{{ category }}</strong> {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <form role="form" enctype="multipart/form-data"
+                method="post" action="/tncore/run">
+              <h2>Required Inputs</h2>
+              <div class="form-group">
+                <label class="control-label">
+                  <label for="model">Metabolic reconstruction</label>
+                </label>
+                <input name="model" type="file" multiple="no"
+                       required>
+                       <div>The metabolic model in SBML format.<p></p></div>
+              </div>
+              <div class="form-group">
+                <label class="control-label">
+                  <label for="excRxns">Exchange reactions</label>
+                </label>
+                <input name="excRxns" type="file" multiple="no"
+                       required>
+                       <div>A tab-delimited table indicating the exchange reactions to be turned on (1st column), and the lower boundary (2nd column).<p></p></div>
+              </div>
+              <div class="form-group">
+                  <label class="control-label">
+                      <label for="objRxn">Objective reaction</label>
+                  </label>
+                  <input name="objRxn" type="file" multiple="no"
+                      required>
+                      <div>A tab-delimited file with the reaction to be set as the objective function (1st column) and the objective value (2nd column).<p></p></div>
+              </div>
+              <div class="form-group">
+                  <label class="control-label">
+                      <label for="tnseq">TnSeq data</label>
+                  </label>
+                  <input name="tnseq" type="file" multiple="no"
+                      required>
+                      <div>The TnSeq data.<p></p></div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <h2>Optional Inputs</h2>
+              <div class="form-group">
+                  <label class="control-label">
+                      <label for="rnaseq">RNAseq data</label>
+                  </label>
+                  <input name="rnaseq" type="file" multiple="no"
+                      >
+                      <div>The RNAseq data.<p></p></div>
+              </div>
+              <div class="form-group">
+                  <label for="growthFrac">Minimum growth fraction</label>
+                <input type="text" class="form-control" name="growthFrac" placeholder="default"
+                       >
+                      <div>The minimal growth rate (as a fraction of the original growth rate) at which the output model can grow.<p></p></div>
+              </div>
+              <div class="form-group">
+                  <label for="expressThresh">Expression threshold</label>
+                  <input type="text" class="form-control" name="expressThresh" placeholder="default"
+                      >
+                      <div>The minimum expression value for a gene to be considered 'on'.<p></p></div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <h2>Submission details</h2>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="your@email.com"
+                       required>
+                <div>The email hash is saved for anonymous statistics on the server usage.<p></p></div>
+              </div>
+              <div class="form-group">
+                <label for="password">Passphrase</label>
+                <input type="password" class="form-control" name="passphrase" placeholder="password">
+                <div>By default the results page is visible to anyone that knows the page URL (which makes it easier to share with your collaborators). Using a passphrase will ensure better privacy of your analysis.<p></p></div>
+              </div>
+              
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Submit job</button>
+                <div>We expect that Tn-Core will finish within 20 minutes for most models, and in many cases it is likely to finish in less than 10 minutes. However, large or complex models may require additional running time.<p></p></div>
+            </form>
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+
+      </div> <!-- /container -->
+{% endblock %}

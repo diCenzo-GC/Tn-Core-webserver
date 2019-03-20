@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1 col-md-offset-3">
+          </div><!-- col -->
+          <div class="col-md-5">
+            <h1 class="title">Tn-Core web server</h1>
+          </div><!-- col -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- header -->
+    
+    <div class="home">
+
+      <div class="row">
+        <noscript>
+          <div class="alert alert-danger">
+            <strong>Whoops! Javascript has not been enabled</strong>
+              <br/>                
+              You may experience some troubles in browsing this site...
+          </div>
+        </noscript>
+      </div>
+      {% block container %}
+      <div class="container">
+
+      </div> <!-- /container -->
+      {% endblock %}
+    </div> <!-- /home -->
+
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+
+
+          <div class="col-md-3">
+            <h5>Brought to you by</h5>
+            <div class="muted">
+            <p>
+              <a href="http://www.unifi.it/dbefcb/" target="_blank">
+                <img alt="Combo" src="{{ url_for('static', filename='img/combo.png') }}" class="bg-container" width="100">
+              </a>
+            </p>
+            <p>
+              <a href="http://www.unifi.it/dbefcb/" target="_blank">Florence Computational Biology Group</a>
+              <br>
+              <a href="http://www.unifi.it/dblage/" target="_blank">Department of Biology</a>
+              <br>
+              <a href="http://www.unifi.it/">University of Florence</a>
+            </p>
+          </div>
+            <h5>Contacts</h5>
+            <div class="muted">
+            <p>
+              For feedback, bug reports, and other information:
+              </p>
+                <li>george.dicenzo (at) queensu.ca</li>
+                <li>marco.fondi (at) unifi.it</li>
+            </div>
+
+          </div>
+
+
+          <div class="col-md-5">
+            <h5>Cite us</h5>
+	    <div class="muted">
+		<p>GC diCenzo, A Mengoni, and M Fondi. <a href="https://pubs.acs.org/doi/10.1021/acssynbio.8b00432">Tn-Core: a toolbox for integrating Tn-seq gene essentiality data and constraint-based metabolic modeling.</a> ACS Synthetic Biology (2019) 8: 158-169.
+<!--		</p>
+		<p>GC diCenzo, M Galardini, and M Fondi. <a href="https://pubs.acs.org/doi/10.1021/acssynbio.8b00432">Tn-Core book chapter.</a> XXX (XXXX) XXX: XXX.
+		</p> -->
+	    </div>
+            <h5>Web-server source</h5>
+            <div class="muted">
+            	<p>This web-server runs using <a href="http://flask.pocoo.org/">Flask</a> and <a href="http://redis.io/">Redis</a>, and was adapted from the code for the open-source <a href="https://github.com/combogenomics/medusa-webapp">MeDuSa</a> webserver. 
+            	</p>
+            </div>
+
+          </div>
+
+
+          <div class="col-md-4">
+              <h5>Home page</h5>
+              <div class="muted">
+                  <p>
+                  You can find the <a href="/tncore"> home page</a> here</a>.
+                  </p>
+              </div>
+              <h5>Help files</h5>
+              <div class="muted">
+                  <p>
+                  You can find <a href="https://github.com/diCenzo-GC/Tn-Core-webserver"> help files</a> on GitHub, including usage instructions and sample data</a>.
+                  </p>
+              </div>
+          <h5>Stand-alone version</h5>
+          <div class="muted">
+            <p>
+	    You can <a href="https://github.com/diCenzo-GC/Tn-Core">download Tn-Core</a> from the official repository and run it from your machine</a>.
+            </p>
+          </div>
+
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- header -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.cookiesdirective.js') }}"></script>    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $.cookiesDirective({
+            privacyPolicyUri: "{{ url_for('static', filename='privacy-policy.html') }}",
+            position: 'bottom',
+            explicitConsent: false,
+        });
+    });
+    {% block scripts %}
+    {% endblock %}
+</script>
+
+<div id="statcounter_image" style="display:inline;">
+<a
+title="web statistics"
+href="http://statcounter.com/free-web-stats/"
+class="statcounter">
+<img
+src="http://c.statcounter.com/9925812/0/bd9c6ce8/0/"
+alt="web statistics" style="border:none;" /></a>
+</div>
+
+
+  </body>
+</html>
